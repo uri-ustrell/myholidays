@@ -15,6 +15,19 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('department/{user}', function () {
-	
-})
+Route::get('department/{user}', function() {
+	return view('department.main');
+});
+
+Route::get('members/{department}', function() {
+	return view('members.main');
+});
+
+Route::get('calendar/{department}', function() {
+	return view('calendar.main');
+});
+
+Route::get('profile/{user}', function() {
+	return view('user.main');
+});
+
