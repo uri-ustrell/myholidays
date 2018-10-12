@@ -23,3 +23,22 @@
 	padding:0;
 	margin:0;
 }
+
+/*CALENDAR VIEW*/
+
+.calendarMenu .addBtn, .calendarMenu .editBtn{
+	font-size: 2rem;
+}
+
+.calendarUsers i{
+	font-size: 2rem;
+}
+
+.calendarUsers span {
+	line-height: 1;
+}
+
+.calendarUsers span:nth-child(2){
+	font-size: 0.8rem;
+	font-style: italic;
+}

@@ -22,7 +22,7 @@ Route::get('department/{user}', function() {
 Route::get('members/{department}', function() {
 	return view('members.main');
 });
-
+//gives all members of dpmnt :: front-end will organize
 Route::get('calendar/{department}', function() {
 	return view('calendar.main');
 });
