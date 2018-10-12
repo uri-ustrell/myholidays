@@ -1,1 +1,1 @@
-profile.blade.php
+<h1><b>profile</b> VIEW</h1>

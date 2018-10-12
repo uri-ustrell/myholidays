@@ -1,1 +1,1 @@
-main.blade.php
+<h1><b>members</b> MAIN VIEW</h1>
