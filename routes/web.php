@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('department/{user}', function() {
+Route::get('departments/{user}', function() {
 	return view('department.main');
 });
 

@@ -16,7 +16,7 @@
 <div class="calendarMenu  row  container-fluid">
 	<div class="calendarUsers  d-inline-flex  justify-content-between  align-items-center">
 		@foreach($members as $id_member => $memberName)
-			<i style="color:{{$memColors[ array_search($memberName,array_values($members)) ]}}" class="fas fa-user  mr-1"></i>
+			<i style="color:{{$memColors[ array_search($memberName,array_values($members)) ]}}" class="fas fa-user  m-1"></i>
 			<div class="d-inline d-flex flex-column">
 				<span class="text-secondary">{{$memberName}}</span>
 				<span class="text-muted">{{$id_member}}'s boss</span>
@@ -25,6 +25,12 @@
 	</div>
 	<div class="addBtn  ml-3  text-muted"><i class="fas fa-plus-circle"></i></div>
 	<div class="editBtn  ml-3  text-muted"><i class="fas fa-highlighter"></i></div>
+</div>
+<div class="calendarDisplay col bg-light">
+	<center class="w-100 h-100 d-flex  flex-column  align-items-center  justify-content-center">
+		<h1>GOOGLE calendar APIrest</h1>
+		<h3><i>we better develop this with Angular</i></h3>
+	</center>
 </div>
 
 @endsection

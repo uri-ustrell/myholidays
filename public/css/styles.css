@@ -1,6 +1,7 @@
+.body{}
+
 .container{
 	margin: 30px 100px;
-
 }
 
 .cabecera{
@@ -42,3 +43,54 @@
 	font-size: 0.8rem;
 	font-style: italic;
 }
+
+.calendarDisplay{
+	height: 80vh;
+	overflow-y: scroll;
+}
+
+/*DEPARTMENTS VIEW*/
+
+.departmentsMenu .addBtn{
+	font-size: 2rem;
+}
+
+.departmentsMenu{
+	line-height: 1;
+}
+
+.departmentsDisplay{
+	height: 80vh;
+	overflow-y: scroll;
+}
+
+/*DMEMBERS VIEW*/
+.membersMenu .addBtn{
+	font-size: 2rem;
+}
+
+.membersMenu{
+	line-height: 1;
+}
+
+.membersList i{
+	font-size: 2.3rem;
+}
+
+.membersList span {
+	line-height: 1;
+}
+
+.membersList span:first-child{
+	font-size: 1.2rem;
+}
+
+.membersList span:nth-child(2){
+	font-style: italic;
+}
+
+.membersDisplay{
+	height: 80vh;
+	overflow-y: scroll;
+}
+
