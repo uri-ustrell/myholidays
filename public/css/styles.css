@@ -96,6 +96,11 @@
 
 /*PROFILE VIEW*/
 
+.ownProfileDisplay{
+	height: 80vh;
+	overflow-y: scroll;
+}
+
 .userProfileForm{
-	
+	max-width: 600px;
 }
