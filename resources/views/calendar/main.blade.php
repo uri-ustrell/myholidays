@@ -29,7 +29,7 @@
 <div class="calendarDisplay col bg-light">
 	<center class="w-100 h-100 d-flex  flex-column  align-items-center  justify-content-center">
 		<h1>GOOGLE calendar APIrest</h1>
-		<h3><i>we better develop this with Angular</i></h3>
+		<h3><i>we better develop this with <b>Angular</b></i></h3>
 	</center>
 </div>
 

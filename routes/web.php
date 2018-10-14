@@ -13,20 +13,20 @@
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
-Route::get('departments/{user}', function() {
-	return view('department.main');
-});
+Route::get('departments', function() {
+	return view('departments.main');
+})->name('departments.main');
 
-Route::get('members/{department}', function() {
+Route::get('members', function() {
 	return view('members.main');
-});
+})->name('members.main');
 //gives all members of dpmnt :: front-end will organize
-Route::get('calendar/{department}', function() {
+Route::get('calendar', function() {
 	return view('calendar.main');
-});
+})->name('calendar.main');
 
-Route::get('profile/{user}', function() {
+Route::get('profile', function() {
 	return view('user.profile');
-});
+})->name('user.profile');
