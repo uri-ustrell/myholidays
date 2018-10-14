@@ -19,7 +19,7 @@
 	<div class="membersList  d-flex  justify-content-start  flex-column  h-100 p-2">
 		@foreach($members as $id_member => $memberName)
 			<div class="memberOfList  py-1  d-inline-flex  justify-content-start  align-items-center">
-				<a href="#" class="d-inline-flex  justify-content-start  align-items-center">
+				<a href="{{ route('calendar.member', ['member'=>str_replace(' ','-',$memberName)])}}" class="d-inline-flex  justify-content-start  align-items-center">
 					<i class="fas fa-user  m-2  text-primary"></i>
 					<div class="d-inline-flex  flex-column">
 						<span class="text-secondary">{{$memberName}}</span>

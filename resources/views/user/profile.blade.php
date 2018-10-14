@@ -7,7 +7,7 @@
 	  <i>We'll fill these with <b>Angular</b></i>
 	</div>
 
-	<form method="POST" id="userRegisterForm" class="userProfileForm  p-4  mx-auto  border  border-secundary  bg-light  rounded">
+	<form method="POST" id="userRegisterForm" class="userProfileForm  p-4  mx-auto  border  border-secundary  bg-light  rounded" action="{{ route('profile.update') }}">
 		<div class="form-group">
 			<label for="myLib_reg_user">User </label>
 			<input type="text" id="myLib_reg_user" class="form-control  form-control-lg" aria-describedby="userHelpBlock" placeholder="your name" required>
