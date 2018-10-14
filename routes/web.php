@@ -28,6 +28,5 @@ Route::get('calendar/{department}', function() {
 });
 
 Route::get('profile/{user}', function() {
-	return view('user.main');
+	return view('user.profile');
 });
-
