@@ -19,7 +19,7 @@
 		</div>
 		<ul class="navbar-nav">
 			<li class="nav-item  ml-2"><a class="text-secondary" href="{{ route('user.profile') }}"><i class="fas fa-user"></i> Dwight Schrute</a></li>
-			<li class="nav-item  ml-2"><a class="text-secondary" href="{{ route('home') }}"><i class="fas fa-power-off"></i></a></li>
+			<li class="nav-item  ml-2"><a class="text-secondary" href="{{ route('logout') }}"><i class="fas fa-power-off"></i></a></li>
 		</ul>
 	</nav>
 </header>

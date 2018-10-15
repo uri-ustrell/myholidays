@@ -15,9 +15,14 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/', function () {
+	if ( isset($_SESSION) )  session_destroy();
+    return view('home');
+})->name('logout');
+
 Route::get('departments', function() {
 	return view('departments.main');
-})->name('departments.main');
+})->name('departments.main'); 
 
 Route::get('members', function() {
 	return view('members.main');
@@ -29,14 +34,22 @@ Route::group(['prefix'=>'calendar'], function(){
 		return view('calendar.main');
 	})->name('calendar.main');
 	//with GET parameter, it'll show one member's calendar
-	Route::get('{member}', function() {
-		return view('calendar.main');
+	Route::get('{member}', function($mem) {
+		return view('calendar.main',['mem'=>$mem]);
 	})->name('calendar.member');
 });
 
 Route::group(['prefix'=>'profile'],function(){
 	Route::get('', function() {
-		return view('user.profile');
+		//fetch user atributes and array
+		$userData = [
+			'name'=>'Dwight Schrute',
+			'email'=>'dwigth@tyransboss.com',
+			'department'=> array('1'=>'Tyrans'),
+			'hired'=>'2011-09-01',
+			'vacations'=>'23'
+		];
+		return view('user.profile', ['userData'=>$userData]);
 	})->name('user.profile');
 	//POST parameters
 	Route::post('update', function(){

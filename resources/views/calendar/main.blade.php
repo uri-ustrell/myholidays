@@ -3,8 +3,12 @@
 	| we'd like get all information from members of department X,
 	| then Angular will display based on user interact
 	*/
+
 	//array('id_member'=>'name member')
-	$members = array('23'=>'Cloe Patra','44'=>'Carlo Magno','1'=>'Cesar Victus');
+	$members = ( !isset($mem) )
+	?	array('23'=>'Cloe Patra','44'=>'Carlo Magno','1'=>'Cesar Victus')
+	:	array('un'=>$mem);
+
 
 	$memColors = array('#FF9898','#D098FF','#98C6FF','#FF98EF','#98EDFF','#98FFE6','#B0FF98','#989AFF','#E1FF98','#FFEF98','#FFC898');
 ?>
