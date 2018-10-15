@@ -40,19 +40,35 @@ Route::group(['prefix'=>'calendar'], function(){
 });
 
 Route::group(['prefix'=>'profile'],function(){
-	Route::get('', function() {
-		//fetch user atributes and array
-		$userData = [
-			'name'=>'Dwight Schrute',
-			'email'=>'dwigth@tyransboss.com',
-			'department'=> array('1'=>'Tyrans'),
-			'hired'=>'2011-09-01',
-			'vacations'=>'23'
-		];
+	Route::get('', function($userData = []) {
+		//If atributes doesn't come from previows error request, fetch user atributes and array
+		if( !count($userData) ){
+			$userData = [
+				'name'=>'Dwight Schrute',
+				'email'=>'dwigth@tyransboss.com',
+				'department'=> array('1'=>'Tyrans'),
+				'hired'=>'2011-09-01',
+				'vacations'=>'23'
+			];
+		}
 		return view('user.profile', ['userData'=>$userData]);
 	})->name('user.profile');
 	//POST parameters
-	Route::post('update', function(){
-		return 'IT WORKS!!';
+	Route::post('update', function(\Illuminate\Http\Request $request , \Illuminate\Validation\Factory $validator ){
+		
+		$validation = $validator->make($request->all(), [
+			'userName'=>['required','min:2','max:30','regex:/[\'^£$%&*()}{@#~?><>,|=_+¬-]/'],
+			'userEmail'=>'required|e-mail',
+			'pass'=>'required|min:6|max:16',
+			'pass2'=>'required_with:pass|same:pass|min:6|max:16'
+		]);
+
+		if( $validation->fails() ) {
+			return redirect()->back()->withErrors($validation)->with('userData',$request->all());
+		}
+
+		return redirect()
+			->route('user.profile')
+			->with('userInfo', $request->input('userName') .'\'s data have been updated succesfuly');
 	})->name('profile.update');
 });
