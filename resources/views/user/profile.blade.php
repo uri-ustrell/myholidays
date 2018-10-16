@@ -17,7 +17,7 @@
 @section('content')
 	@if(Session::has('userInfo'))
 		<div class="alert alert-success" role="alert">
-	  		{{ Session::get('updateOK') }}
+	  		{{ Session::get('userInfo') }}
 		</div>
 	@endif
 	@include('partials.form-errors')

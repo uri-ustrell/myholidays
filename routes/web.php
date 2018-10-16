@@ -42,7 +42,7 @@ Route::group(['prefix'=>'calendar'], function(){
 Route::group(['prefix'=>'profile'],function(){
 	Route::get('', function($userData = []) {
 		//If atributes doesn't come from previows error request, fetch user atributes and array
-		if( !count($userData) ){
+		if ( !count($userData) ) {
 			$userData = [
 				'name'=>'Dwight Schrute',
 				'email'=>'dwigth@tyransboss.com',
@@ -57,7 +57,7 @@ Route::group(['prefix'=>'profile'],function(){
 	Route::post('update', function(\Illuminate\Http\Request $request , \Illuminate\Validation\Factory $validator ){
 		
 		$validation = $validator->make($request->all(), [
-			'userName'=>['required','min:2','max:30','regex:/[\'^£$%&*()}{@#~?><>,|=_+¬-]/'],
+			'userName'=>['required','min:2','max:90',/*'regex:/[\'^£$%&*()}{@#~?><>,|=_+¬]/'*/],//find a way to NOT_REGEX
 			'userEmail'=>'required|e-mail',
 			'pass'=>'required|min:6|max:16',
 			'pass2'=>'required_with:pass|same:pass|min:6|max:16'
