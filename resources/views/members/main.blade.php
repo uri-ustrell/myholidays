@@ -4,7 +4,7 @@
 	| then Angular will display based on user interact
 	*/
 	//array('id_member'=>'name member')
-	$members = array('23'=>'Cloe Patra','44'=>'Carlo Magno','1'=>'Cesar Victus');
+	//$members = array('23'=>'Cloe Patra','44'=>'Carlo Magno','1'=>'Cesar Victus');
 ?>
 
 @extends('layouts.master')
@@ -17,13 +17,13 @@
 </div>
 <div class="membersDisplay col">
 	<div class="membersList  d-flex  justify-content-start  flex-column  h-100 p-2">
-		@foreach($members as $id_member => $memberName)
+		@foreach($mems as $member)
 			<div class="memberOfList  py-1  d-inline-flex  justify-content-start  align-items-center">
-				<a href="{{ route('calendar.member', ['member'=>str_replace(' ','-',$memberName)])}}" class="d-inline-flex  justify-content-start  align-items-center">
+				<a href="{{ route('calendar.member', ['member'=>str_replace(' ','-',strtolower($member['name']))])}}" class="d-inline-flex  justify-content-start  align-items-center">
 					<i class="fas fa-user  m-2  text-primary"></i>
 					<div class="d-inline-flex  flex-column">
-						<span class="text-secondary">{{$memberName}}</span>
-						<span class="text-muted">{{$id_member}}'s boss</span>
+						<span class="text-secondary">{{$member['name']}}</span>
+						<span class="text-muted">{{$member['id']}}'s boss</span>
 					</div>
 				</a>
 				<div class="memberVacations  d-inline  ml-sm-2  bg-light">

@@ -24,9 +24,7 @@ Route::get('departments', function() {
 	return view('departments.main');
 })->name('departments.main'); 
 
-Route::get('members', function() {
-	return view('members.main');
-})->name('members.main');
+Route::get('members', 'MemberController@getMembers')->name('members.main');
 
 Route::group(['prefix'=>'calendar'], function(){
 	//gives all members of dpmnt :: front-end will organize
