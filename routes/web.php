@@ -24,13 +24,20 @@ Route::get('departments', function() {
 	return view('departments.main');
 })->name('departments.main'); 
 
-Route::get('members', 'MemberController@getMembers')->name('members.main');
+//syntax 1
+//Route::get('members', 'MemberController@getMembers')->name('members.main');
+//syntax 2
+Route::get('members', [
+	'uses' => 'MemberController@getMembers',
+	'as' => 'members.main'
+]);
 
 Route::group(['prefix'=>'calendar'], function(){
 	//gives all members of dpmnt :: front-end will organize
-	Route::get('', function() {
-		return view('calendar.main');
-	})->name('calendar.main');
+	Route::get('/', [
+		'uses'=>'CalendarController@get_all_DEPT',
+		'as' => 'calendar.main'
+	]);
 	//with GET parameter, it'll show one member's calendar
 	Route::get('{member}', function($mem) {
 		return view('calendar.main',['mem'=>$mem]);

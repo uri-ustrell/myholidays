@@ -4,13 +4,7 @@
 	| then Angular will display based on user interact
 	*/
 
-	//array('id_member'=>'name member')
-	$members = ( !isset($mem) )
-	?	array('23'=>'Cloe Patra','44'=>'Carlo Magno','1'=>'Cesar Victus')
-	:	array('un'=>$mem);
-
-
-	$memColors = array('#FF9898','#D098FF','#98C6FF','#FF98EF','#98EDFF','#98FFE6','#B0FF98','#989AFF','#E1FF98','#FFEF98','#FFC898');
+	$memColors = array('#FF9898','#D098FF','#98C6FF','#FF98EF','#98EDFF','#98FFB0','#C1FF98','#989AFF','#E1FF98','#FFEF98','#FFC898');
 ?>
 
 @extends('layouts.master')
@@ -18,12 +12,12 @@
 @section('content')
 
 <div class="calendarMenu  row  container-fluid">
-	<div class="calendarUsers  d-inline-flex  justify-content-between  align-items-center">
-		@foreach($members as $id_member => $memberName)
-			<i style="color:{{$memColors[ array_search($memberName,array_values($members)) ]}}" class="fas fa-user  m-1"></i>
+	<div class="calendarUsers  d-inline-flex  justify-content-between  align-items-center  flex-wrap">
+		@foreach($mems as $key => $mem)
+			<i style="color:{{ $memColors[$key] }}" class="fas fa-user  m-1"></i>
 			<div class="d-inline d-flex flex-column">
-				<span class="text-secondary">{{$memberName}}</span>
-				<span class="text-muted">{{$id_member}}'s boss</span>
+				<span class="text-secondary">{{ $mem['name'] }}</span>
+				<span class="text-muted">{{ $mem['id'] }}'s boss</span>
 			</div>
 		@endforeach
 	</div>

@@ -12,8 +12,33 @@ class Member {
 			//if NOT, lets put some dummie members
 			$this->createDummyMems($session);
 		}
+
 		return $session->get('mems');
 	}
+
+	public function getMem($session,$id){
+		if ( !$session->has('mems') ){
+			$this->createDummyMems($session);
+		}
+
+		foreach ($session->get('mems') as $key => $mem) {
+			if ($mem[$key]['id'] == $id) { return $mem[$key]; }
+		}
+
+		return array('id'=>'not found','name'=>'unknown member');
+	}
+
+	public function addMem($session, $newMem = []){
+		if ( !$session->has('mems') ){
+			$this->createDummyMems($session);
+		}
+
+		$mems = $session->get('mems');
+		array_push($mems, $newMem);
+		$session->put('mems',$mems);
+	}
+
+	
 
 	private function createDummyMems($session){
 		$mems = [
