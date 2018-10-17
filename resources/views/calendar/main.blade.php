@@ -13,13 +13,21 @@
 
 <div class="calendarMenu  row  container-fluid">
 	<div class="calendarUsers  d-inline-flex  justify-content-between  align-items-center  flex-wrap">
-		@foreach($mems as $key => $mem)
-			<i style="color:{{ $memColors[$key] }}" class="fas fa-user  m-1"></i>
+		@if( isset($mem) )
+			<i style="color:{{ $memColors[array_rand($memColors)] }}" class="fas fa-user  m-1"></i>
 			<div class="d-inline d-flex flex-column">
 				<span class="text-secondary">{{ $mem['name'] }}</span>
 				<span class="text-muted">{{ $mem['id'] }}'s boss</span>
 			</div>
-		@endforeach
+		@else
+			@foreach($mems as $key => $mem)
+				<i style="color:{{ $memColors[$key] }}" class="fas fa-user  m-1"></i>
+				<div class="d-inline d-flex flex-column">
+					<span class="text-secondary">{{ $mem['name'] }}</span>
+					<span class="text-muted">{{ $mem['id'] }}'s boss</span>
+				</div>
+			@endforeach
+		@endif
 	</div>
 	<div class="addBtn  ml-3  text-muted"><i class="fas fa-plus-circle"></i></div>
 	<div class="editBtn  ml-3  text-muted"><i class="fas fa-highlighter"></i></div>

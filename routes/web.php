@@ -39,12 +39,13 @@ Route::group(['prefix'=>'calendar'], function(){
 		'as' => 'calendar.main'
 	]);
 	//with GET parameter, it'll show one member's calendar
-	Route::get('{member}', function($mem) {
-		return view('calendar.main',['mem'=>$mem]);
-	})->name('calendar.member');
+	Route::get('{name}', [
+		'uses' => 'MemberController@getMem',
+		'as' => 'calendar.member'
+	]);
 });
 
-Route::group(['prefix'=>'profile'],function(){
+Route::group(['prefix'=>'profile'],function() {
 	Route::get('', function($userData = []) {
 		//If atributes doesn't come from previows error request, fetch user atributes and array
 		if ( !count($userData) ) {
@@ -59,10 +60,17 @@ Route::group(['prefix'=>'profile'],function(){
 		return view('user.profile', ['userData'=>$userData]);
 	})->name('user.profile');
 	//POST parameters
-	Route::post('update', function(\Illuminate\Http\Request $request , \Illuminate\Validation\Factory $validator ){
+	
+	Route::post('update', [
+		'uses' => 'MemberController@editMemAdmin',
+		'as' => 'profile.update'
+	]);
+
+	/*Route::post('update', function(\Illuminate\Http\Request $request , \Illuminate\Validation\Factory $validator ){
 		
 		$validation = $validator->make($request->all(), [
-			'userName'=>['required','min:2','max:90',/*'regex:/[\'^£$%&*()}{@#~?><>,|=_+¬]/'*/],//find a way to NOT_REGEX
+			'userName'=>['required','min:2','max:90',
+			'regex:/[\'^£$%&*()}{@#~?><>,|=_+¬]/'],
 			'userEmail'=>'required|e-mail',
 			'pass'=>'required|min:6|max:16',
 			'pass2'=>'required_with:pass|same:pass|min:6|max:16'
@@ -75,5 +83,5 @@ Route::group(['prefix'=>'profile'],function(){
 		return redirect()
 			->route('user.profile')
 			->with('userInfo', $request->input('userName') .'\'s data have been updated succesfuly');
-	})->name('profile.update');
+	})->name('profile.update');*/
 });

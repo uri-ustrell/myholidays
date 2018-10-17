@@ -15,4 +15,5 @@ class CalendarController extends Controller
 		$mems = $mem->getMembers($session);
 		return view('calendar.main',['mems' => $mems]);
 	}
+
 }
