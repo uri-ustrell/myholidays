@@ -92,7 +92,8 @@ Just make sure you init git and CLONE contents to **/htdocs**
 
 6. Browser
 ->go to your favorite browser
-->type **localhost**
+->type **localhost/myholidays**
+(note that "localhost" is pointint to /htdocs, so whereever you've cloned the repository, your url should point to there)
 
 Now, you should be able to see and navigate through the app.
 
