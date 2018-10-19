@@ -90,6 +90,11 @@ Just make sure you init git and CLONE contents to **/htdocs**
 
 **git clone -b uriDevs https://github.com/uri-ustrell/myholidays.git**
 
+5.1 FOR MAC:
+	-time to give permission to two folders to let the app work in local environtment.
+	-> **sudo chmod -R 777 storage**
+	-> **sudo chmod -R 777 bootstrap/cache**
+
 6. Browser
 ->go to your favorite browser
 ->type **localhost/myholidays**

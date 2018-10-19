@@ -23,5 +23,4 @@
     <hr>
     <h2>XSS</h2>
     {{"<script>alert('I am in.')</script>"}}
-    {!!"<script>alert('I am out.')</script>"!!}
 @endsection
