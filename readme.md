@@ -84,6 +84,11 @@ Let's go delet this and pull our GitHub content
 I guess every one of you now how to PULL from uri-ustrell/myholidays; so you're already collaborators.
 
 Just make sure you init git and CLONE contents to **/htdocs**
+**uriDevs branch!!!!**
+
+#so: 
+
+**git clone -b uriDevs https://github.com/uri-ustrell/myholidays.git**
 
 6. Browser
 ->go to your favorite browser
