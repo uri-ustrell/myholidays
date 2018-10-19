@@ -15,6 +15,7 @@ INSTALL
 -> For Linux, MAC & Windows go to: https://www.apachefriends.org/es/download.html
 
 -> download and install version **7.2.11 / PHP 7.2.11**
+	->if the image is not woking or whatever, you can download 7.1 version or even 7.0...
 (It'll take 2-5 minutes)
 
 2. XAMPP manager to activate server environment.
@@ -48,6 +49,7 @@ INSTALL
 ->windows:
 	-"windows apps" + type XAMPP + enter
 	-once manager is opened: 
+		-got o **manage servers** (tag at the top)
 		-**start** APACHE service
 		-**start** MySQL service 
 
@@ -67,9 +69,11 @@ Let's go delet this and pull our GitHub content
 
 ->WINDOWS:
 	-**C:\xampp\htdocs\myholidays**
+	or, go to manager app and clilc **open application folder**
 		(remove every content in there)
 ->MAC:
 	-Go to: Applications/XAMPP/htdocs
+		or, go to manager app and clilc **manage servers>open application folder**
 		(remove every content in there)
 ->LINUX
 	-cd /opt/lampp/htdocs
@@ -79,7 +83,7 @@ Let's go delet this and pull our GitHub content
 
 I guess every one of you now how to PULL from uri-ustrell/myholidays; so you're already collaborators.
 
-Just make sure you init git and pull contents from **/htdocs**ç
+Just make sure you init git and CLONE contents to **/htdocs**
 
 6. Browser
 ->go to your favorite browser
