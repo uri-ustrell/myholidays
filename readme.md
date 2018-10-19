@@ -49,7 +49,7 @@ INSTALL
 ->windows:
 	-"windows apps" + type XAMPP + enter
 	-once manager is opened: 
-		-got o **manage servers** (tag at the top)
+		-go to **manage servers** (tag at the top)
 		-**start** APACHE service
 		-**start** MySQL service 
 
@@ -69,7 +69,7 @@ Let's go delet this and pull our GitHub content
 
 ->WINDOWS:
 	-**C:\xampp\htdocs\myholidays**
-	or, go to manager app and clilc **open application folder**
+	or, go to manager app and clilc **explorer**
 		(remove every content in there)
 ->MAC:
 	-Go to: Applications/XAMPP/htdocs
